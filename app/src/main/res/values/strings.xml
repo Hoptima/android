@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Hoptima</string>
+
+    <!-- Home -->
+    <string name="home">Home</string>
+
+    <!-- Favorites -->
+    <string name="favorites">Favorites</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+
+    <!-- Preferences -->
+    <string name="dark_mode">Dark Mode</string>
+    <string name="dark_mode_summary">Enable dark mode</string>
+</resources>
