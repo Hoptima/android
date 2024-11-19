@@ -16,6 +16,7 @@ import kotlin.math.abs
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private val tabTitles = arrayListOf(R.drawable.baseline_circle_24,R.drawable.baseline_circle_24,R.drawable.baseline_circle_24)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,7 +41,7 @@ class HomeFragment : Fragment() {
 
         val tabLayout: TabLayout = binding.tabLayout
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-
+            tab.setIcon(tabTitles[position])
         }.attach()
 
 
