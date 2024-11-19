@@ -7,7 +7,6 @@
     android:foregroundGravity="center_vertical"
     tools:context=".ui.home.HomeFragment">
 
-
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -18,12 +17,14 @@
         android:paddingStart="10dp"
         android:text="Sleman"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/rounded_background"
+
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="143dp"
+        android:layout_height="200dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -33,65 +34,75 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="40dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewPager" />
+        app:layout_constraintTop_toBottomOf="@id/viewPager"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorGravity="center"
+        app:tabSelectedTextColor="#FF0000"
+        app:tabTextColor="#CCCCCC"
+        android:layout_margin="16dp"/>
 
     <Button
         android:id="@+id/buttonn"
         android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_background"
-        android:padding="16dp"
-        android:elevation="4dp"
         android:layout_gravity="center_horizontal"
-        android:text="Cek harga sekarang!"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
         android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_background"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Cek harga sekarang!"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        app:layout_constraintVertical_bias="0.185" />
+        app:layout_constraintVertical_bias="0.045" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonn"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintVertical_bias="0.138"
+        tools:layout_editor_absoluteX="0dp">
+
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/keterangan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/keterangan"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <TextView
                 android:id="@+id/textViewRiwayat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Riwayat"
                 android:layout_marginStart="16dp"
+                android:text="Riwayat"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textViewLihatSemua"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lihat semua"
                 android:layout_marginEnd="16dp"
+                android:text="Lihat semua"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -101,13 +112,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/keterangan"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:orientation="horizontal"/>
+            app:layout_constraintTop_toBottomOf="@+id/keterangan" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
