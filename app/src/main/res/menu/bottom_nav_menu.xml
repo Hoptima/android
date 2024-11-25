@@ -7,9 +7,9 @@
         android:title="@string/home" />
 
     <item
-        android:id="@+id/navigation_favorites"
-        android:icon="@drawable/baseline_favorite_24"
-        android:title="@string/favorites" />
+        android:id="@+id/navigation_bookmarks"
+        android:icon="@drawable/baseline_bookmark_24"
+        android:title="@string/bookmarks" />
 
     <item
         android:id="@+id/navigation_settings"

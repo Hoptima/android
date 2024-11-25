@@ -6,7 +6,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_background" />
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/image_banner"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true" />
 </FrameLayout>

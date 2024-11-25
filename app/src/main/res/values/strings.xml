@@ -3,9 +3,14 @@
 
     <!-- Home -->
     <string name="home">Home</string>
+    <string name="find_your_dream_home">Find your dream home</string>
+    <string name="history">History</string>
+    <string name="see_all">See all</string>
+    <string name="image_banner">Image Banner</string>
 
-    <!-- Favorites -->
-    <string name="favorites">Favorites</string>
+    <!-- Bookmarks -->
+    <string name="bookmarks">Bookmarks</string>
+    <string name="photo">Photo</string>
 
     <!-- Settings -->
     <string name="settings">Settings</string>
@@ -13,4 +18,7 @@
     <!-- Preferences -->
     <string name="dark_mode">Dark Mode</string>
     <string name="dark_mode_summary">Enable dark mode</string>
+
+    <!-- Errors -->
+    <string name="no_data">No data</string>
 </resources>
