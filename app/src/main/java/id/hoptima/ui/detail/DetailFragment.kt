@@ -3,8 +3,10 @@ package id.hoptima.ui.detail
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import id.hoptima.R
 import id.hoptima.databinding.FragmentDetailBinding
@@ -62,5 +64,20 @@ class DetailFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    @Deprecated("Deprecated in Java", ReplaceWith(
+        "super.onOptionsItemSelected(item)",
+        "androidx.fragment.app.Fragment"
+    )
+    )
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                findNavController().navigateUp()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
