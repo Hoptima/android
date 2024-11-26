@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Foto Properti -->
+        <ImageView
+            android:id="@+id/iv_property_photo"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/photo"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/home_sample" />
+
+        <!-- Nama Properti -->
+        <TextView
+            android:id="@+id/tv_property_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="16dp"
+            android:text="Perumahan Ohio City"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_property_photo" />
+
+        <!-- Lokasi Properti -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_property_name">
+
+            <ImageView
+                android:id="@+id/iv_icon_location"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                tools:src="@drawable/baseline_location_pin_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_property_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Jl. Ohio City No. 123, Ohio City"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_icon_location"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Harga -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_location">
+
+            <ImageView
+                android:id="@+id/iv_icon_price"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                tools:src="@drawable/baseline_attach_money_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_property_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Rp 1.000.000.000"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_icon_price"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Detail Properti -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_features"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_price">
+
+            <ImageView
+                android:id="@+id/iv_icon_bed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:src="@drawable/baseline_bed_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cl_features" />
+
+            <TextView
+                android:id="@+id/tv_bedrooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="3 Bedrooms"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                app:layout_constraintBottom_toBottomOf="@id/cl_features"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/iv_icon_bed"
+                app:layout_constraintTop_toTopOf="@id/cl_features" />
+
+            <ImageView
+                android:id="@+id/iv_icon_bathroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:src="@drawable/baseline_bathroom_24"
+                app:layout_constraintBottom_toBottomOf="@id/cl_features"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/tv_bedrooms"
+                app:layout_constraintTop_toTopOf="@id/cl_features" />
+
+            <TextView
+                android:id="@+id/tv_bathrooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="2 Bathrooms"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                app:layout_constraintBottom_toBottomOf="@id/cl_features"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/iv_icon_bathroom"
+                app:layout_constraintTop_toTopOf="@id/cl_features" />
+
+            <ImageView
+                android:id="@+id/iv_icon_parking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:src="@drawable/baseline_directions_car_24"
+                app:layout_constraintBottom_toBottomOf="@id/cl_features"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/tv_bathrooms"
+                app:layout_constraintTop_toTopOf="@id/cl_features" />
+
+            <TextView
+                android:id="@+id/tv_parking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="1 Parking"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                app:layout_constraintBottom_toBottomOf="@id/cl_features"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/iv_icon_parking"
+                app:layout_constraintTop_toTopOf="@id/cl_features" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Luas Tanah dan Bangunan -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_land"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_features">
+
+            <ImageView
+                android:id="@+id/iv_icon_land_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:src="@drawable/baseline_land_24"
+                app:layout_constraintBottom_toBottomOf="@id/cl_land"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cl_land" />
+
+            <TextView
+                android:id="@+id/tv_land_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="200 m²"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                app:layout_constraintBottom_toBottomOf="@id/cl_land"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/iv_icon_land_area"
+                app:layout_constraintTop_toTopOf="@id/cl_land" />
+
+            <ImageView
+                android:id="@+id/iv_icon_building_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:src="@drawable/baseline_home_work_24"
+                app:layout_constraintBottom_toBottomOf="@id/cl_land"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/tv_land_area"
+                app:layout_constraintTop_toTopOf="@id/cl_land" />
+
+            <TextView
+                android:id="@+id/tv_building_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="150 m²"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                app:layout_constraintBottom_toBottomOf="@id/cl_land"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/iv_icon_building_area"
+                app:layout_constraintTop_toTopOf="@id/cl_land" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            app:layout_constraintTop_toBottomOf="@+id/cl_land"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:text="Deskripsi"
+            android:layout_marginBottom="16dp"
+            />
+ />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
