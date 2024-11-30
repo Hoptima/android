@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,8 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        
-
         <!-- Foto Properti -->
         <ImageView
             android:id="@+id/iv_property_photo"
@@ -24,7 +21,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/home_sample" />
+            app:srcCompat="@drawable/home_sample" />
 
         <!-- Nama Properti -->
         <TextView
@@ -55,7 +52,7 @@
                 android:id="@+id/iv_icon_location"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                tools:src="@drawable/baseline_location_pin_24"
+                app:srcCompat="@drawable/baseline_location_pin_24"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,7 +85,7 @@
                 android:id="@+id/iv_icon_price"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                tools:src="@drawable/baseline_attach_money_24"
+                app:srcCompat="@drawable/baseline_attach_money_24"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -119,7 +116,7 @@
                 android:id="@+id/iv_icon_bed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:src="@drawable/baseline_bed_24"
+                app:srcCompat="@drawable/baseline_bed_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -143,7 +140,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                tools:src="@drawable/baseline_bathroom_24"
+                app:srcCompat="@drawable/baseline_bathroom_24"
                 app:layout_constraintBottom_toBottomOf="@id/cl_features"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -168,7 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                tools:src="@drawable/baseline_directions_car_24"
+                app:srcCompat="@drawable/baseline_directions_car_24"
                 app:layout_constraintBottom_toBottomOf="@id/cl_features"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -203,7 +200,7 @@
                 android:id="@+id/iv_icon_land_area"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:src="@drawable/baseline_land_24"
+                app:srcCompat="@drawable/baseline_land_24"
                 app:layout_constraintBottom_toBottomOf="@id/cl_land"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -228,7 +225,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                tools:src="@drawable/baseline_home_work_24"
+                app:srcCompat="@drawable/baseline_home_work_24"
                 app:layout_constraintBottom_toBottomOf="@id/cl_land"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -260,9 +257,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp"
             android:text="Deskripsi"
-            android:layout_marginBottom="16dp"
-            />
- />
-
+            android:layout_marginBottom="16dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
