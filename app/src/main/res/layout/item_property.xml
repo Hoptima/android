@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_bookmark"
+        style="?attr/floatingActionButtonSmallStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:contentDescription="@string/bookmark"
+        app:srcCompat="@drawable/baseline_bookmark_border_24"
+        app:tint="@color/md_theme_secondary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/property_photo"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:dividerDrawable="@drawable/divider_small"
+                app:flexDirection="row"
+                app:flexWrap="wrap"
+                app:showDivider="middle">
+
+                <TextView
+                    android:id="@+id/tv_bedroom_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:drawablePadding="4dp"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    app:drawableStartCompat="@drawable/outline_bed_16"
+                    app:drawableTint="@color/adaptive_color"
+                    app:layout_flexShrink="0" />
+
+                <TextView
+                    android:id="@+id/tv_toilet_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:drawablePadding="4dp"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    app:drawableStartCompat="@drawable/outline_toilet_16"
+                    app:drawableTint="@color/adaptive_color"
+                    app:layout_flexShrink="0" />
+
+                <TextView
+                    android:id="@+id/tv_garage_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:drawablePadding="4dp"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    app:drawableStartCompat="@drawable/outline_car_16"
+                    app:drawableTint="@color/adaptive_color"
+                    app:layout_flexShrink="0" />
+
+                <TextView
+                    android:id="@+id/tv_building_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:drawablePadding="4dp"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    app:drawableStartCompat="@drawable/outline_building_16"
+                    app:drawableTint="@color/adaptive_color"
+                    app:layout_flexShrink="0" />
+
+                <TextView
+                    android:id="@+id/tv_land_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:drawablePadding="4dp"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    app:drawableStartCompat="@drawable/outline_land_plot_16"
+                    app:drawableTint="@color/adaptive_color"
+                    app:layout_flexShrink="0" />
+            </com.google.android.flexbox.FlexboxLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

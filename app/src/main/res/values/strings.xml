@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Hoptima</string>
+    <string name="app_tagline">Discover Your Perfect Home</string>
+
+    <!-- Common -->
+    <string name="back">Back</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="no_data">Oops! There is currently no data available.</string>
+    <string name="illust_no_data">Illustration of no data</string>
+    <string name="property_photo">Property Photo</string>
 
     <!-- Home -->
     <string name="home">Home</string>
@@ -8,19 +16,49 @@
     <string name="see_all">See all</string>
     <string name="image_banner">Image Banner</string>
 
+    <!-- Histories -->
+    <string name="histories">Histories</string>
+
     <!-- Bookmarks -->
     <string name="bookmarks">Bookmarks</string>
-    <string name="photo">Photo</string>
+    <string name="bookmarks_summary">The properties you have bookmarked.</string>
 
     <!-- Settings -->
     <string name="settings">Settings</string>
-
-    <!-- Preferences -->
+    <string name="language">Language</string>
+    <string name="language_summary">Select your preferred language</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="dark_mode_summary">Enable dark mode</string>
 
-    <!-- Errors -->
-    <string name="no_data">No data</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="language_names">
+        <item>English</item>
+        <item>Bahasa Indonesia</item>
+    </string-array>
+    <string-array name="language_codes">
+        <item>en</item>
+        <item>in</item>
+    </string-array>
+
+    <!-- Chat -->
+    <string name="chat">Chat</string>
+    <string name="hoptima_ai">Hoptima AI</string>
+    <string name="you">You</string>
+    <string name="new_chat">New Chat</string>
+    <string name="send">Send</string>
+    <string name="guide_chat">Hi! I am Hoptima AI. I can help you find your dream home. Just tell me the criteria you want to find and I will find it for you!</string>
+    <string name="type_criteria">Type your criteria…</string>
+    <string name="criteria_required">Please input your criteria first</string>
+    <string name="recommendation_found">I found some recommendations based on your criteria.</string>
+    <string name="recommendation_not_found">I could not find any recommendations based on your criteria. Try again with different criteria.</string>
+    <string name="recommendation_error">An error occurred while trying to find you recommendations. Please check your connection or try again later.</string>
+
+    <!-- Detail -->
+    <string name="detail">Detail</string>
+    <string name="property_detail">Property Detail</string>
+    <string name="bedrooms">Bedrooms</string>
+    <string name="toilets">Toilets</string>
+    <string name="garages">Garages</string>
+    <string name="building_area">Building Area</string>
+    <string name="land_area">Land Area</string>
+    <string name="buy">Buy Property</string>
 </resources>

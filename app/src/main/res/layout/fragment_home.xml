@@ -11,28 +11,44 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_change_location"
-            style="@style/Widget.Material3.Button.TonalButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_marginBottom="16dp"
-            android:text="Sleman"
-            app:icon="@drawable/baseline_location_on_24"
             app:layout_constraintBottom_toTopOf="@id/cv_carousel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearance="?attr/shapeAppearanceCornerSmall" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:text="@string/app_tagline"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary" />
+        </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cv_carousel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="64dp"
             app:layout_constraintBottom_toTopOf="@id/btn_start_chat"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_change_location">
+            app:layout_constraintTop_toBottomOf="@id/ll_header">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -69,13 +85,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="64dp"
+            android:padding="18dp"
             android:text="@string/find_your_dream_home"
+            android:textSize="16sp"
             app:icon="@drawable/baseline_arrow_right_alt_24"
             app:iconGravity="textEnd"
             app:iconSize="28dp"
-            android:padding="18dp"
-            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@id/ll_history"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +100,6 @@
 
         <LinearLayout
             android:id="@+id/ll_history"
-            android:layout_marginBottom="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -101,12 +116,13 @@
                 android:textAppearance="?attr/textAppearanceBodyMedium" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_to_histories"
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:minWidth="@null"
                 android:gravity="end"
+                android:minWidth="@null"
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:text="@string/see_all"
@@ -122,10 +138,23 @@
             android:layout_marginStart="-16dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/sv_no_data"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_history" />
+
+        <RelativeLayout
+            android:id="@+id/sv_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_histories">
+
+            <include layout="@layout/part_no_data" />
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

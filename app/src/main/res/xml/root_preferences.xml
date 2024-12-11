@@ -8,4 +8,14 @@
         android:title="@string/dark_mode"
         app:iconSpaceReserved="false" />
 
+    <ListPreference
+        android:defaultValue="en"
+        android:entries="@array/language_names"
+        android:entryValues="@array/language_codes"
+        android:key="language"
+        android:summary="@string/language_summary"
+        app:iconSpaceReserved="false"
+        android:title="@string/language" />
+
+
 </PreferenceScreen>

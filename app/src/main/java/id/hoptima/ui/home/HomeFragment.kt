@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import id.hoptima.R
 import id.hoptima.databinding.FragmentHomeBinding
+import id.hoptima.ui.common.BaseFragment
+import id.hoptima.ui.common.CompactPropertyAdapter
 import kotlin.math.abs
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -34,6 +35,17 @@ class HomeFragment : Fragment() {
     }
 
     private fun initView() {
+
+        binding.apply {
+            btnStartChat.setOnClickListener {
+                navController.navigate(R.id.action_home_to_chat)
+            }
+
+            btnToHistories.setOnClickListener {
+                navController.navigate(R.id.action_home_to_histories)
+            }
+        }
+
         val carouselImages = listOf(
             R.drawable.carousel_image_1,
             R.drawable.carousel_image_2,
@@ -51,9 +63,14 @@ class HomeFragment : Fragment() {
         val tabLayout = binding.tlCarouselIndicator
         TabLayoutMediator(tabLayout, viewPager) { _, _ -> }.attach()
 
-        val historyImages = (1..5).map { R.drawable.home_sample }
-        binding.rvHistories.apply {
-            adapter = HistoryAdapter(historyImages)
+        val propertyAdapter = CompactPropertyAdapter(R.id.action_home_to_detail) {
+            viewModel.setPropertyBookmark(it, it.bookmarkedAt == null)
+        }
+        binding.rvHistories.adapter = propertyAdapter
+
+        viewModel.getRecentProperties().observe(viewLifecycleOwner) {
+            propertyAdapter.submitList(it)
+            binding.svNoData.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
         }
     }
 }

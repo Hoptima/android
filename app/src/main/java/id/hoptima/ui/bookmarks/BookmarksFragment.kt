@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.paging.LoadState
 import id.hoptima.R
 import id.hoptima.databinding.FragmentBookmarksBinding
+import id.hoptima.ui.common.BaseFragment
+import id.hoptima.ui.common.PropertyAdapter
 
-class BookmarksFragment : Fragment() {
+class BookmarksFragment : BaseFragment() {
     private var _binding: FragmentBookmarksBinding? = null
     private val binding get() = _binding!!
 
@@ -23,30 +25,27 @@ class BookmarksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val bookmarkAdapter = BookmarkAdapter()
-        binding.rvBookmarks.apply {
-            adapter = bookmarkAdapter
-        }
-
-        val sampleData = Property(
-            "Perumahan Ohio City",
-            "Cleveland, Ohio",
-            "Rp 1.5m",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor sapien lorem, non ultrices massa consectetur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. In mattis tortor eu nisl pulvinar, at feugiat leo finibus. Ut accumsan est felis, ac mollis massa volutpat vitae. Nulla eu nunc sit amet neque bibendum vehicula. Mauris dapibus, risus eu faucibus aliquet, leo orci aliquam tellus, et blandit magna quam nec libero. Quisque vulputate dictum urna, nec pharetra purus viverra nec. Duis aliquam viverra sapien in iaculis. Pellentesque ut nisi et massa consectetur hendrerit sit amet eu diam. Aliquam sagittis tincidunt nibh ac luctus. Aenean urna urna, hendrerit sit amet risus eget, interdum pretium magna.",
-            "3",
-            "2",
-            "1",
-            "100 m²",
-            "200 m²",
-            R.drawable.home_sample
-        )
-        val list = (1..10).map { sampleData }
-        bookmarkAdapter.submitList(list)
+        initView()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun initView() {
+        val bookmarkAdapter = PropertyAdapter(R.id.action_bookmarks_to_detail) {
+            viewModel.setPropertyBookmark(it, it.bookmarkedAt == null)
+        }
+        binding.rvBookmarks.adapter = bookmarkAdapter
+
+        viewModel.getBookmarkedProperties().observe(viewLifecycleOwner) {
+            bookmarkAdapter.submitData(viewLifecycleOwner.lifecycle, it)
+        }
+
+        bookmarkAdapter.addLoadStateListener {
+            val isListEmpty = it.refresh is LoadState.NotLoading && bookmarkAdapter.itemCount == 0
+            binding.svNoData.visibility = if (isListEmpty) View.VISIBLE else View.GONE
+        }
     }
 }

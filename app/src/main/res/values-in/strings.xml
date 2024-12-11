@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Hoptima</string>
+    <string name="app_tagline">Discover Your Perfect Home</string>
+    <string name="back">Kembali</string>
+    <string name="bookmark">Tandai</string>
+    <string name="no_data">Ups! Saat ini tidak ada data yang tersedia.</string>
+    <string name="illust_no_data">"Ilustrasi tidak ada data "</string>
+    <string name="property_photo">Foto Properti</string>
+    <string name="home">Beranda</string>
+    <string name="find_your_dream_home">Temukan rumah impianmu</string>
+    <string name="history">Riwayat</string>
+    <string name="see_all">Lihat semua</string>
+    <string name="image_banner">Gambar Banner</string>
+    <string name="histories">Riwayat</string>
+    <string name="bookmarks">Penanda</string>
+    <string name="bookmarks_summary">Properti-properti yang sudah kamu tandai.</string>
+    <string name="settings">Pengaturan</string>
+    <string name="language">Bahasa</string>
+    <string name="language_summary">Pilih preferensi bahasa kamu</string>
+    <string name="dark_mode">Mode Gelap</string>
+    <string name="dark_mode_summary">Aktifkan mode gelap</string>
+    <string name="chat">Chat</string>
+    <string name="hoptima_ai">Hoptima AI</string>
+    <string name="you">Kamu</string>
+    <string name="new_chat">Chat Baru</string>
+    <string name="send">Kirim</string>
+    <string name="guide_chat">Hai! Aku Hoptima AI. Aku bisa bantu kamu menemukan rumah impianmu. Cukup kasih tahu aku kriteria yang kamu inginkan dan aku akan menemukannya untukmu!</string>
+    <string name="type_criteria">Ketik kriteriamu…</string>
+    <string name="criteria_required">Tolong masukkan kriteriamu terlebih dahulu</string>
+    <string name="recommendation_found">Aku menemukan beberapa rekomendasi berdasarkan kriteriamu.</string>
+    <string name="recommendation_not_found">"Aku tidak berhasil menemukan rekomendasi apa pun berdasarkan kriteriamu. Coba lagi dengan kriteria yang berbeda. "</string>
+    <string name="recommendation_error">Terjadi kesalahan saat mencoba mencari rekomendasi untukmu. Coba periksa koneksimu atau coba lagi nanti.</string>
+    <string name="detail">Detail</string>
+    <string name="property_detail">Detail Properti</string>
+    <string name="bedrooms">Kamar</string>
+    <string name="toilets">Toilet</string>
+    <string name="garages">Garasi</string>
+    <string name="building_area">Luas Bangunan</string>
+    <string name="land_area">Luas Tanah</string>
+    <string name="buy">Beli Properti</string>
 </resources>
