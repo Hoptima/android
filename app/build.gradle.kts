@@ -75,6 +75,7 @@ dependencies {
     implementation(libs.google.flexboxlayout)
     implementation(libs.androidx.paging.runtime.ktx)
     implementation(libs.androidx.room.paging)
+    implementation(libs.androidx.splashscreen)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

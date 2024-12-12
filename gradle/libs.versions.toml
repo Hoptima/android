@@ -16,10 +16,10 @@ converterGson = "2.9.0"
 glide = "4.15.0"
 retrofit = "2.9.0"
 room = "2.6.1"
-preferenceKtx = "1.2.1"
 preference = "1.2.1"
 flexboxlayout = "3.0.0"
 pagingKtx = "3.3.5"
+splashscreen = "1.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -41,11 +41,12 @@ retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", v
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
-androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
+androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preference" }
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 google-flexboxlayout = { module = "com.google.android.flexbox:flexbox", version.ref = "flexboxlayout" }
 androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "pagingKtx" }
 androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
+androidx-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "splashscreen" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
