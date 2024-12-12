@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/navigation_histories"
-        android:name="id.hoptima.ui.histories.HistoryFragment"
+        android:name="id.hoptima.ui.histories.HistoriesFragment"
         android:label="@string/histories"
         tools:layout="@layout/fragment_histories">
         <action

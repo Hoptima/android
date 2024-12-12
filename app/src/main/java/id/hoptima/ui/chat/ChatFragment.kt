@@ -1,18 +1,29 @@
 package id.hoptima.ui.chat
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.doOnPreDraw
 import id.hoptima.R
 import id.hoptima.data.Result
 import id.hoptima.databinding.FragmentChatBinding
 import id.hoptima.ui.common.BaseFragment
 import id.hoptima.ui.common.CompactPropertyAdapter
+import id.hoptima.util.AnimationUtil
 
 class ChatFragment : BaseFragment() {
     private var _binding: FragmentChatBinding? = null
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val inflater = TransitionInflater.from(context)
+        enterTransition = inflater.inflateTransition(R.transition.slide_right)
+        exitTransition = inflater.inflateTransition(R.transition.fade)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +55,16 @@ class ChatFragment : BaseFragment() {
     }
 
     private fun initView() {
+        if (viewModel.isChatGuideShown) {
+            binding.flGuide.alpha = 1f
+        } else {
+            viewModel.isChatGuideShown = true
+            AnimationUtil.fadeIn(binding.flGuide).apply {
+                duration = 500
+                startDelay = 2000
+            }.start()
+        }
+
         binding.btnBack.setOnClickListener {
             activity?.onBackPressedDispatcher?.onBackPressed()
         }
@@ -68,6 +89,7 @@ class ChatFragment : BaseFragment() {
         }
 
         viewModel.query.observe(viewLifecycleOwner) {
+            postponeEnterTransition()
             binding.apply {
                 rvRecommendations.adapter = propertyAdapter
 
@@ -83,7 +105,10 @@ class ChatFragment : BaseFragment() {
         viewModel.recommendations.observe(viewLifecycleOwner) {
             when (it) {
                 is Result.Loading -> {
-                    binding.progressBar.visibility = View.VISIBLE
+                    binding.apply {
+                        flResult.visibility = View.VISIBLE
+                        toggleLoading(true)
+                    }
                 }
 
                 is Result.Success -> {
@@ -98,21 +123,28 @@ class ChatFragment : BaseFragment() {
                         if (!isDataEmpty) {
                             propertyAdapter.submitList(it.data)
                             rvRecommendations.visibility = View.VISIBLE
+
+                            (view?.parent as? ViewGroup)?.doOnPreDraw {
+                                startPostponedEnterTransition()
+                            }
                         }
 
-                        flResult.visibility = View.VISIBLE
-                        progressBar.visibility = View.GONE
+                        toggleLoading(false)
                     }
                 }
 
                 is Result.Error -> {
                     binding.apply {
                         tvResultMessage.text = getString(R.string.recommendation_error)
-                        flResult.visibility = View.VISIBLE
-                        progressBar.visibility = View.GONE
+                        toggleLoading(false)
                     }
                 }
             }
         }
+    }
+
+    private fun toggleLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        binding.btnNewChat.isEnabled = !isLoading
     }
 }

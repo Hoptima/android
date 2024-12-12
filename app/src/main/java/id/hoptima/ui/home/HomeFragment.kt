@@ -1,9 +1,11 @@
 package id.hoptima.ui.home
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.doOnPreDraw
 import com.google.android.material.tabs.TabLayoutMediator
 import id.hoptima.R
 import id.hoptima.databinding.FragmentHomeBinding
@@ -14,6 +16,11 @@ import kotlin.math.abs
 class HomeFragment : BaseFragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        exitTransition = TransitionInflater.from(context).inflateTransition(R.transition.fade)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,6 +42,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun initView() {
+        postponeEnterTransition()
 
         binding.apply {
             btnStartChat.setOnClickListener {
@@ -71,6 +79,10 @@ class HomeFragment : BaseFragment() {
         viewModel.getRecentProperties().observe(viewLifecycleOwner) {
             propertyAdapter.submitList(it)
             binding.svNoData.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
+
+            (view?.parent as? ViewGroup)?.doOnPreDraw {
+                startPostponedEnterTransition()
+            }
         }
     }
 }

@@ -16,6 +16,7 @@
     <string name="bookmarks">Penanda</string>
     <string name="bookmarks_summary">Properti-properti yang sudah kamu tandai.</string>
     <string name="settings">Pengaturan</string>
+    <string name="settings_summary">Kustomisasi preferensi aplikasimu</string>
     <string name="language">Bahasa</string>
     <string name="language_summary">Pilih preferensi bahasa kamu</string>
     <string name="dark_mode">Mode Gelap</string>
@@ -25,6 +26,7 @@
     <string name="you">Kamu</string>
     <string name="new_chat">Chat Baru</string>
     <string name="send">Kirim</string>
+    <string name="finding_recommendation">Mencari rekomendasi…</string>
     <string name="guide_chat">Hai! Aku Hoptima AI. Aku bisa bantu kamu menemukan rumah impianmu. Cukup kasih tahu aku kriteria yang kamu inginkan dan aku akan menemukannya untukmu!</string>
     <string name="type_criteria">Ketik kriteriamu…</string>
     <string name="criteria_required">Tolong masukkan kriteriamu terlebih dahulu</string>

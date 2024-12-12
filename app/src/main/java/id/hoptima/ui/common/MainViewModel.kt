@@ -17,6 +17,8 @@ class MainViewModel @Inject constructor(private val propertyRepository: Property
     val _query = MutableLiveData<String>()
     val query: LiveData<String> = _query
 
+    var isChatGuideShown = false
+
     val recommendations = query.switchMap {
         propertyRepository.getRecommendations(it)
     }
